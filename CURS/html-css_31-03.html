@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: gray;
+      }
+      
+      .miniatura {
+        position: relative;
+        display: inline-block;
+      }
+
+      .desplegable {
+        display: none;
+        position: absolute;
+        background-color: #ffffff;
+        min-width: 160px;
+        z-index: 1;
+      }
+
+      .miniatura:hover .desplegable {
+        display: block;
+      }
+
+      .desc {
+        padding: 15px;
+        text-align: center;
+      }
+     
+      a::after {
+        content: " (" attr(href) ")";
+      }
+    
+    </style>
+  </head>
+  <body>
+    <div class="miniatura">
+      <img src="./img/imagen1.jpeg" alt="Imagen1" width="100" height="100" />
+      <div class="desplegable">
+        <img src="./img/imagen1.jpeg" alt="Imagen1" width="300" height="300" />
+        <div class="desc">Descripción</div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <a href="https://www.w3schools.com/css/">CSS Tutorial</a><br />
+    <a href="https://www.w3schools.com/cssref/">CSS Reference</a>
+  </body>
+</html>

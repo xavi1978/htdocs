@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list_users>
+
+    <user>
+        <name>Pepe</name>
+        <email>aaaaaaa@gggggggg.com</email>
+        <password>kkkkkkkkkkkkkkkkkkk</password>
+        <time>1648210930</time>
+        <year>1</year>
+        <language>1</language>
+        <terminos>Sí</terminos>
+        <condiciones>No</condiciones>
+        <fecha>1648249200</fecha>
+    </user>
+    <user>
+        <name>Pepe</name>
+        <email>aaaaaaa@gggggggg.com</email>
+        <password>kkkkkkkkkkkkkkkkkkk</password>
+        <time>1648211518</time>
+        <year>0</year>
+        <language>1</language>
+        <terminos>Sí</terminos>
+        <condiciones>No</condiciones>
+        <fecha>1648249200</fecha>
+    </user>
+    <user>
+        <name>Pepe</name>
+        <email>aaaaaaa@gggggggg.com</email>
+        <password>kkkkkkkkkkkkkkkkkkk</password>
+        <time>1648211577</time>
+        <year>0</year>
+        <language>1</language>
+        <terminos>Sí</terminos>
+        <condiciones>No</condiciones>
+        <fecha>1648249200</fecha>
+    </user>
+    <user>
+        <name>Pepe</name>
+        <email>aaaaaaa@gggggggg.com</email>
+        <password>kkkkkkkkkkkkkkkkkkk</password>
+        <time>1648211779</time>
+        <year>0</year>
+        <language>1</language>
+        <terminos>Sí</terminos>
+        <condiciones>No</condiciones>
+        <fecha>1648249200</fecha>
+    </user>
+</list_users>

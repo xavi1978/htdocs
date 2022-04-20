@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="stylesheet" href="style.css" />
+  <title></title>
+
+  <style>
+    body {
+      background-color: gray;
+    }
+
+    form {
+      background-color: lightgray;
+    }
+
+    .center {
+      margin: auto;
+      width: 30%;
+      padding: 10px;
+      text-align: center;
+      margin-top: 10px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <form method="get" action="./save.php">
+    <fieldset>
+      <div class="center">
+        <label for="name">Name:</label><br />
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="name user"
+          value=""
+        />
+      </div>
+      <div class="center">
+        <label for="email">Email:</label><br />
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="email"
+          value=""
+        />
+      </div>
+      <div class="center">
+        <label for="password">Password:</label><br />
+
+        <input type="password" id="password" name="password" value="" />
+      </div>
+      <div class="center">
+        <label for="guardar">Guardar:</label><br />
+        <input type="radio" id="guardar" name="accion" value="Guardar" />
+        <br />
+        <label for="login">Login:</label><br />
+        <input type="radio" id="login" name="accion" value="Login" />
+      </div>
+      <div class="center">
+        <input type="submit" value="Submit" />
+      </div>
+    </fieldset>
+  </form>
+</body>

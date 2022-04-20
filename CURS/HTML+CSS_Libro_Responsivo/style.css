@@ -1,0 +1,119 @@
+body {
+	/* background-image: linear-gradient(white skyblue); */
+	background-color: lightblue;
+	font-family: sans-serif;
+}
+
+header,
+footer {
+	z-index: 2;
+}
+
+header {
+	position: fixed;
+	top: 0px;
+	background-color: blue;
+	width: 110%;
+	margin-left: -10px;
+	margin-right: -10px;
+	color: white;
+}
+
+header h1 {
+	position: relative;
+	left: 10%;
+	top: 10%;
+	line-height: 20px;
+}
+
+header form {
+	position: relative;
+	left: 50%;
+	top: -50%;
+}
+
+#botonentrar {
+	color: white;
+	background-color: gray;
+}
+
+#registro {
+	position: absolute;
+	top: 12%;
+	left: 55%;
+}
+
+#registro input {
+	margin: 15px;
+	padding: 10px;
+}
+
+.ancho {
+	width: 400px;
+}
+
+#botonreg {
+	width: 200px;
+	color: white;
+	background-color: green;
+}
+
+#movil {
+	position: absolute;
+	top: 15%;
+	left: 20%;
+}
+
+#movil p {
+	position: absolute;
+	top: 0px;
+}
+
+#movil img {
+	position: relative;
+	top: 100px;
+	left: -150px;
+}
+
+#movil button {
+	position: relative;
+	top: -60px;
+	left: 50px;
+}
+
+footer {
+	position: fixed;
+	bottom: 0px;
+	width: 110%;
+	margin-left: -10px;
+	margin-right: -10px;
+	background-color: white;
+	text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+	* {
+		display: block;
+	}
+
+	#movil {
+		position: absolute;
+		top: 60%;
+		left: 0%;
+	}
+
+	#movil img {
+		position: relative;
+		top: 80px;
+		left: 300px;
+	}
+
+	#registro {
+		top: 110%;
+		left: 0%;
+	}
+
+	#registro input {
+		width: 90%;
+	}
+}
