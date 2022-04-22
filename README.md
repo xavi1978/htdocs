@@ -1,15 +1,5 @@
-# asd
+# Repositorio htdocs
 
-## asd
+`./CURS` ejercicios servidor (PHP, forms, etc.).
 
-### asd
-
-asd
-
-**asd**
-
-_texto en cursiva_
-
-~~Tachado~~
-
-> Texto que es una cita
+`./CURS/Recursos` recursos copipegar.
