@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>IFCD0110-UF1303</title>
+		<meta name="author" content="Nom Cognom1 Cognom2" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1304"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- <link rel="stylesheet" href="styles.css"> -->
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				background-color: #848484;
+			}
+			.anchor {
+				display: block;
+				position: relative;
+				top: -120px;
+				visibility: hidden;
+			}
+			/* MENU */
+			header {
+				width: 100%;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				font-family: sans-serif;
+				background-color: #f1c40f;
+			}
+			nav {
+				top: 0;
+				width: 100%;
+				position: fixed;
+				z-index: 1;
+			}
+			.menu-icon {
+				display: none;
+			}
+			#menuToggle {
+				display: none;
+			}
+			nav ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #333;
+				width: 100%;
+				display: inline-block;
+			}
+			nav ul li {
+				float: left;
+			}
+			nav ul li a,
+			.dropbtn {
+				display: inline-block;
+				color: yellow;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-weight: bold;
+			}
+			nav ul li a:hover,
+			.dropdown:hover .dropbtn {
+				background-color: rgb(0, 99, 180);
+			}
+			li.dropdown {
+				display: inline-block;
+			}
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f34343;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+				z-index: 1;
+			}
+			.dropdown-content a {
+				color: rgb(0, 255, 0);
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+				font-weight: bold;
+			}
+			.dropdown-content a:hover {
+				background-color: #aaaaaa;
+			}
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+			@media screen and (max-width: 768px) {
+				.menu {
+					width: 100%;
+					height: auto;
+				}
+				.menu ul {
+					display: block;
+					max-height: 0;
+					overflow: hidden;
+					-webkit-transition: max-height 0.3s;
+					-moz-transition: max-height 0.3s;
+					-ms-transition: max-height 0.3s;
+					-o-transition: max-height 0.3s;
+					transition: max-height 0.3s;
+					/*Para fazer com que o menu saia da esquerda, você deve trocar max-height por max-width*/
+					/*Para fazer com que o menu saia da direita, você deve trocar max-height por max-width e setar float: right*/
+				}
+				.menu ul li {
+					text-align: left;
+					width: 100%;
+					height: 50px;
+					background-color: #f1c40f;
+					padding: 10px 0px 10px 5%;
+				}
+				.menu-icon {
+					width: 100px;
+					height: 25px;
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					line-height: 30px;
+					background-color: #f1c40f;
+					cursor: pointer;
+				}
+				#menuToggle:checked ~ ul {
+					max-height: 350px;
+					/*Para fazer com que o menu saia da esquerda ou direita, você deve trocar max-height por max-width*/
+				}
+				nav ul li a,
+				.dropbtn {
+					color: red;
+				}
+				.dropdown-content {
+					margin-top: -20px;
+				}
+			}
+			/* MAIN */
+			.main {
+				background-color: white;
+				margin: auto;
+				width: 80%;
+				border-radius: 25px;
+				margin-top: 60px;
+				padding-left: 5%;
+				padding-right: 5%;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+			/* HOME */
+			section {
+				background-color: Tomato;
+				margin: auto;
+				margin-bottom: 20px;
+				border-color: blue;
+				border-style: solid;
+				border-radius: 50px 50px 30px 30px;
+			}
+			#dotted {
+				border-style: dotted;
+				border-color: green;
+				border-radius: 30px 60px 1px 100px;
+			}
+			#dotted p {
+				margin: 25px 30px 20px 0px;
+				background-color: blue;
+			}
+			section h1 {
+				text-transform: capitalize;
+			}
+			figure {
+				text-align: center;
+			}
+			figcaption {
+				color: red;
+				background-color: blue;
+			}
+			#imgNormal {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 40%;
+				opacity: 0.5;
+			}
+			.containerImage {
+				position: relative;
+				text-align: center;
+			}
+			.topleft {
+				position: absolute;
+				top: 40px;
+				left: 200px;
+				font-size: 20px;
+			}
+			#imgVip {
+				width: 60%;
+				height: auto;
+				opacity: 0.7;
+			}
+			/* PARTY */
+			.main ol {
+				color: darkblue;
+			}
+			.main ol ul {
+				list-style-image: url("sqpurple.gif");
+				text-transform: uppercase;
+				color: red;
+			}
+			.main ol ol {
+				color: darkorange;
+			}
+			.main ol ul ul {
+				list-style: circle;
+				color: blue;
+			}
+			.main ol ul ul ul {
+				list-style: disc;
+				color: green;
+			}
+			#list {
+				margin: auto;
+				text-align: center;
+				padding: 3px;
+				background-color: #00791e;
+				border-radius: 20px;
+			}
+			#list ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				margin: 5px;
+				background-color: red;
+			}
+			#list li {
+				width: 19%;
+				float: left;
+				text-transform: uppercase;
+				padding: 1px;
+				margin: 2%;
+				border-radius: 20px;
+				background-color: #05e43d;
+				display: block;
+				text-decoration: none;
+			}
+			/* TABLE */
+			table {
+				border-collapse: collapse;
+				width: 100%;
+			}
+			table,
+			th,
+			td {
+				border: 1px solid;
+			}
+			th,
+			td {
+				text-align: left;
+				padding: 8px;
+			}
+			tr:nth-child(even) {
+				background-color: #817f7f;
+			}
+			thead th {
+				background-color: #aa0404;
+				color: white;
+			}
+			tr:hover {
+				background-color: coral;
+			}
+			tbody th {
+				text-align: center;
+				background-color: #00791e;
+			}
+			tbody th:hover {
+				text-align: center;
+				font-weight: bold;
+				background-color: red;
+			}
+			/* FORM */
+			.container {
+				border-radius: 5px;
+				background-color: #d3d2d2;
+				padding: 40px;
+			}
+			input[type="text"],
+			input[type="number"],
+			input[type="tel"],
+			select,
+			textarea {
+				width: 100%;
+				padding: 12px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				resize: vertical;
+			}
+			input[type="number"]::-webkit-inner-spin-button,
+			input[type="number"]::-webkit-outer-spin-button {
+				opacity: 1;
+			}
+			label {
+				padding: 12px 12px 12px 0;
+				display: inline-block;
+			}
+			input[type="submit"] {
+				background-color: #05e43d;
+				color: white;
+				padding: 12px 20px;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+				float: right;
+			}
+			input[type="submit"]:hover {
+				background-color: #004704;
+			}
+			.col-25 {
+				float: left;
+				width: 25%;
+				margin-top: 6px;
+			}
+			.col-75 {
+				float: left;
+				width: 75%;
+				margin-top: 6px;
+			}
+			/* Clear floats after the columns */
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			@media screen and (max-width: 600px) {
+				.col-25,
+				.col-75,
+				input[type="submit"] {
+					width: 100%;
+					margin-top: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav class="menu">
+				<input type="checkbox" id="menuToggle" />
+				<label for="menuToggle" class="menu-icon">&equiv;</label>
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#party">Party</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropbtn">Dropdown</a>
+						<div class="dropdown-content">
+							<a href="#table">Table</a>
+							<a href="#form">Form</a>
+							<a href="#footer">Footer</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="main">
+			<h2>Home<a id="home" class="anchor"></a></h2>
+			<section>
+				<h1>lorem ipsum</h1>
+				<pre>
+&lt;html lang="es"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8" /&gt;
+&lt;/head&gt;
+&lt;/html&gt;
+</pre
+				>
+			</section>
+			<section id="dotted">
+				<h1>lorem ipsum</h1>
+				<pre>
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Morbi commodo
+dignissim lectus. <b>Ut sagittis est cursus est</b> efficitur,
+nec tempus
+lorem dignissim. Nunc
+id tortor neque.
+Donec tincidunt tortor non.
+</pre>
+			</section>
+			<figure>
+				<img
+					src="https://www.w3schools.com/html/pic_trulli.jpg"
+					alt="Trulli"
+					id="imgNormal"
+				/>
+				<figcaption>Peu d'imatge (figure)</figcaption>
+			</figure>
+			<div class="containerImage">
+				<img
+					src="https://www.w3schools.com/html/pic_trulli.jpg"
+					alt="Cinque Terre"
+					id="imgVip"
+				/>
+				<div class="topleft">Top Left</div>
+			</div>
+		</div>
+		<div class="main">
+			<h2>Party:<a id="party" class="anchor"></a></h2>
+			<ol type="1">
+				<li>Drinks:</li>
+				<ul>
+					<li>Coffee</li>
+					<li><a href="#">Tea</a></li>
+					<li>Whater</li>
+				</ul>
+				<li>Food:</li>
+				<ol type="i">
+					<li>crisps</li>
+					<li>sweets</li>
+					<li>pie</li>
+				</ol>
+				<li>Decorations:</li>
+				<ul type="a">
+					<li>Cardboard</li>
+					<li>Garland</li>
+					<li>
+						Ballons
+						<ul>
+							<li>Loose</li>
+							<li>Piñatas</li>
+							<li>
+								Arches
+								<ul>
+									<li>Letter</li>
+									<li>Number</li>
+									<li>Rainbow</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<li>Gifts:</li>
+				<ol type="A">
+					<li>None</li>
+				</ol>
+			</ol>
+			<div id="list">
+				<ul style="opacity: 0.5">
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JS</li>
+					<li>PHP</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<h2>Table:<a id="table" class="anchor"></a></h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Firstname</th>
+						<th>Lastname</th>
+						<th>Savings</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Peter</td>
+						<td>Griffin</td>
+						<td>$100</td>
+					</tr>
+					<tr>
+						<td>Lois</td>
+						<td>Griffin</td>
+						<td>$150</td>
+					</tr>
+					<tr>
+						<td>Joe</td>
+						<td>Swanson</td>
+						<td rowspan="2">$550</td>
+					</tr>
+					<tr>
+						<td>Cleveland</td>
+						<td>Brown</td>
+					</tr>
+					<tr>
+						<th colspan="2">Total</th>
+						<th>$800</th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="main">
+			<h2>Form:<a id="form" class="anchor"></a></h2>
+			<div class="container">
+				<form action="./receptor.html" target="_blank" method="get">
+					<div class="row">
+						<div class="col-25">
+							<label for="fname">Nom</label>
+						</div>
+						<div class="col-75">
+							<input
+								type="text"
+								id="fname"
+								name="firstname"
+								placeholder="El teu nom"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="lname">Cognoms</label>
+						</div>
+						<div class="col-75">
+							<input
+								type="text"
+								id="lname"
+								name="lastname"
+								placeholder="Cognom1 Cognom2"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="phone">Telèfon</label>
+						</div>
+						<div class="col-75">
+							<input
+								type="tel"
+								id="tel"
+								name="phone"
+								placeholder="+34 612345678"
+								pattern="^\+\d{2-3} \d{9}$"
+								required
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="age">Age</label>
+						</div>
+						<div class="col-25">
+							<input
+								type="number"
+								id="age"
+								name="age"
+								value="18"
+								min="1"
+								max="200"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="passos">Passos al dia (0/100.000)</label>
+						</div>
+						<div class="col-25">
+							<input
+								type="range"
+								id="passos"
+								name="passos"
+								value="40000"
+								min="1"
+								max="100000"
+								list="tickmarks"
+							/>
+							<datalist id="tickmarks">
+								<option value="1"></option>
+								<option value="10000"></option>
+								<option value="20000"></option>
+								<option value="30000"></option>
+								<option value="40000"></option>
+								<option value="50000"></option>
+								<option value="60000"></option>
+								<option value="70000"></option>
+								<option value="80000"></option>
+								<option value="90000"></option>
+								<option value="99999"></option>
+							</datalist>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="c_autonoma">C.Autònoma</label>
+						</div>
+						<div class="col-75">
+							<select id="c_autonoma" name="c_autonoma">
+								<optgroup label="peninsulars">
+									<option value="andalusia">Andalusia</option>
+									<option value="Arago">Aragó</option>
+									<option value="p_asturies">Principat d'Astúries</option>
+									<option value="pais_basc">País Basc</option>
+									<option value="cantabria">Cantàbria</option>
+									<option value="c_la_manxa">Castella - la Manxa</option>
+									<option value="c_lleo">Castella i Lleó</option>
+									<option value="catalunya" selected>Catalunya</option>
+									<option value="extremadura">Extremadura</option>
+									<option value="galicia">Galícia</option>
+									<option value="c_madrid">Comunitat de Madrid</option>
+									<option value="r_de_murcia">Regió de Múrcia</option>
+									<option value="navarra">Navarra</option>
+									<option value="la_rioja">La Rioja</option>
+									<option value="pais_valencia">País Valencià</option>
+								</optgroup>
+								<optgroup label="no peninsulars">
+									<option value="illes_balears">Illes Balears</option>
+									<option value="canaries">Canàries</option>
+								</optgroup>
+								<optgroup label="ciutats no peninsulars">
+									<option value="ceuta">Ceuta</option>
+									<option value="melilla">Melilla</option>
+								</optgroup>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="text">Missatge</label>
+						</div>
+						<div class="col-75">
+							<textarea
+								id="text"
+								name="text"
+								placeholder="Escriure alguna cosa.."
+								style="height: 200px"
+							></textarea>
+						</div>
+					</div>
+					<br />
+					<style>
+						.label_special {
+							display: block;
+							position: relative;
+							padding-left: 35px;
+							margin-bottom: 12px;
+							cursor: pointer;
+							font-size: 22px;
+							-webkit-user-select: none;
+							-moz-user-select: none;
+							-ms-user-select: none;
+							user-select: none;
+						}
+						/* Hide the browser's default checkbox */
+						.label_special input {
+							position: absolute;
+							opacity: 0;
+							cursor: pointer;
+							height: 0;
+							width: 0;
+						}
+						/* Create a custom checkbox */
+						.checkmark {
+							position: absolute;
+							top: 0;
+							left: 0;
+							height: 25px;
+							width: 25px;
+							background-color: rgb(21, 255, 0);
+						}
+						/* On mouse-over, add a grey background color */
+						.label_special:hover input ~ .checkmark {
+							background-color: rgb(255, 238, 0);
+						}
+						/* When the checkbox is checked, add a blue background */
+						.label_special input:checked ~ .checkmark {
+							background-color: #2196f3;
+						}
+						/* Create the checkmark/indicator (hidden when not checked) */
+						.checkmark:after {
+							content: "";
+							position: absolute;
+							display: none;
+						}
+						/* Show the checkmark when checked */
+						.label_special input:checked ~ .checkmark:after {
+							display: block;
+						}
+						/* Style the checkmark/indicator */
+						.label_special .checkmark:after {
+							left: 9px;
+							top: 5px;
+							width: 5px;
+							height: 10px;
+							border: solid white;
+							border-width: 0 3px 3px 0;
+							-webkit-transform: rotate(45deg);
+							-ms-transform: rotate(45deg);
+							transform: rotate(45deg);
+						}
+					</style>
+					<div class="row">
+						<label class="label_special"
+							>One
+							<input type="hidden" value="0" name="check2" />
+							<input type="checkbox" checked="checked" name="check1" />
+							<span class="checkmark"></span>
+						</label>
+						<label class="label_special"
+							>Two
+							<input type="hidden" value="0" name="check2" />
+							<input type="checkbox" name="check2" />
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="row">
+						<input type="submit" value="Envia" />
+					</div>
+				</form>
+			</div>
+		</div>
+		<style>
+			footer {
+				left: 0px;
+				right: 0px;
+				margin-top: 20px;
+				position: absolute;
+				background-color: #63b7fc;
+				border-radius: 50px 50px 0px 0px;
+				padding: 1%;
+				text-align: center;
+				display: inline-block;
+				color: red;
+				font-size: medium;
+			}
+			footer p {
+				text-transform: lowercase;
+			}
+			footer b {
+				text-transform: capitalize;
+				color: black;
+				font-size: large;
+			}
+			footer a {
+				color: yellow;
+			}
+		</style>
+		<footer>
+			<a id="footer" class="anchor"></a>
+			<p><b>author</b>: Nom Cognom1 Cognom2</p>
+			<p><a href="mailto:elmeu@mail.com">elmeu@mail.com</a></p>
+			<p>
+				<b>nom del curs</b>: CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110)
+			</p>
+			<p><b>data</b>: 00/00/2022</p>
+		</footer>
+	</body>
+</html>
