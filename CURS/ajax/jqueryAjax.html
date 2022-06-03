@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+		<style>
+			div {
+				margin: 20px;
+				padding: 20px;
+			}
+			label {
+				width: 100px;
+				display: inline-block;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="crearTabla" style="background-color: red"></div>
+		<div id="insertarDatosLog" style="background-color: green"></div>
+		<div id="insertarDatos" style="background-color: yellow">
+			<label>Nombre:</label>
+			<input type="text" id="name" placeholder="Nombre" /><br />
+			<label>Email:</label>
+			<input type="text" id="email" placeholder="Email" /><br />
+			<label>Phone:</label>
+			<input type="text" id="phone" placeholder="Phone" /><br />
+			<button onclick="enviarDatos()">Add to DB</button>
+		</div>
+		<div id="selectAll" style="background-color: pink"></div>
+		<div id="selectEmail" style="background-color: orange"></div>
+		<script>
+			$.ajax({
+				url: "./cosa.php",
+				type: "POST",
+				data: {
+					queHacer: 1,
+					nombre: "pedro",
+					edad: 15,
+					numero1: 5,
+					numero2: 6,
+				},
+				dataType: "json",
+				success: function (parametros) {
+					if (parametros == 0) {
+						console.log("error data");
+					} else {
+						console.log(parametros);
+						console.log(parametros.nombre);
+						console.log(parametros.edad);
+						console.log(parametros.TOTALIZAR);
+					}
+				},
+				error: function (error) {
+					console.log("ERROR: " + error);
+				},
+			});
+		</script>
+		<script>
+			$.ajax({
+				url: "./cosa.php",
+				type: "POST",
+				data: {
+					queHacer: 2,
+				},
+				// dataType: "json",
+				success: function (parametros) {
+					if (parametros == 0) {
+						console.log("error data");
+					} else {
+						console.log(parametros);
+					}
+				},
+				error: function (error) {
+					console.log("ERROR: " + error);
+				},
+			});
+		</script>
+		<script>
+			$.ajax({
+				url: "./cosa.php",
+				type: "POST",
+				data: {
+					queHacer: 3,
+				},
+				// dataType: "json",
+				success: function (response) {
+					if (response == 0) {
+						document.getElementById("crearTabla").innerHTML = "error data";
+					} else {
+						document.getElementById("crearTabla").innerHTML = response;
+					}
+				},
+				error: function (error) {
+					console.log("ERROR: " + error);
+				},
+			});
+		</script>
+		<script>
+			function enviarDatos() {
+				let phone = document.getElementById("phone").value;
+				if (isNaN(phone)) {
+					alert("El phone debe ser un numero");
+					return null;
+				}
+				$.ajax({
+					url: "./cosa.php",
+					type: "POST",
+					data: {
+						queHacer: 4,
+						nombre: document.getElementById("name").value,
+						email: document.getElementById("email").value,
+						phone: parseInt(document.getElementById("phone").value),
+					},
+					// dataType: "json",
+					success: function (response) {
+						if (response == 0) {
+							document.getElementById("insertarDatosLog").innerHTML =
+								"error data";
+						} else {
+							document.getElementById("insertarDatosLog").innerHTML = response;
+						}
+					},
+					error: function (error) {
+						console.log("ERROR: " + error);
+					},
+				});
+			}
+		</script>
+		<script>
+			setTimeout(() => {
+				$.ajax({
+					url: "./cosa.php",
+					type: "POST",
+					data: {
+						queHacer: 5,
+					},
+					// dataType: "json",
+					success: function (response) {
+						if (response == 0) {
+							document.getElementById("selectAll").innerHTML = "error data";
+						} else {
+							document.getElementById("selectAll").innerHTML = response;
+						}
+					},
+					error: function (error) {
+						console.log("ERROR: " + error);
+					},
+				});
+			}, 1000);
+		</script>
+		<script>
+			setTimeout(() => {
+				$.ajax({
+					url: "./cosa.php",
+					type: "POST",
+					data: {
+						queHacer: 6,
+						email: "eric.casanova@cesi.info",
+					},
+					dataType: "json",
+					success: function (response) {
+						if (response == 0) {
+							document.getElementById("selectEmail").innerHTML = "error data";
+						} else {
+							document.getElementById("selectEmail").innerHTML = response;
+						}
+					},
+					error: function (error) {
+						console.log("ERROR: " + error);
+					},
+				});
+			}, 2000);
+		</script>
+	</body>
+</html>
