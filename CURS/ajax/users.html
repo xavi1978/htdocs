@@ -27,15 +27,15 @@
 	</head>
 	<body>
 		<form id="form_datos">
-			<label for="nombre">Nombre:</label>
-			<input type="text" id="nombre" />
+			<label for="name">Nombre:</label>
+			<input type="text" id="name" />
 			<label for="email">E-mail:</label>
 			<input type="text" id="email" />
 			<label for="password">Password:</label>
 			<input type="password" id="password" />
 			<label for="phone">Phone:</label>
 			<input type="text" id="phone" />
-			<button>Añadir a DB</button>
+			<button onclick="enviarDatos()">Añadir a DB</button>
 		</form>
 		<form id="form_nombre">
 			<label for="nombre2">Nombre:</label>
@@ -49,5 +49,37 @@
 			<input type="password" id="password2" />
 			<button>Login</button>
 		</form>
+		<script>
+			function enviarDatos() {
+				let phone = document.getElementById("phone").value;
+				if (isNaN(phone)) {
+					alert("El phone debe ser un numero");
+					return null;
+				}
+				$.ajax({
+					url: "./users.php",
+					type: "POST",
+					data: {
+						queHacer: 1,
+						nombre: document.getElementById("name").value,
+						email: document.getElementById("email").value,
+						phone: parseInt(document.getElementById("phone").value),
+						pw: document.getElementById("password").value,
+					},
+					// dataType: "json",
+					success: function (response) {
+						if (response == 0) {
+							document.getElementById("insertarDatosLog").innerHTML =
+								"error data";
+						} else {
+							document.getElementById("insertarDatosLog").innerHTML = response;
+						}
+					},
+					error: function (error) {
+						console.log("ERROR: " + error);
+					},
+				});
+			}
+		</script>
 	</body>
 </html>
