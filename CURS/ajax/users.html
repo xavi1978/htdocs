@@ -7,7 +7,7 @@
 		<title>Document</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 		<style>
-			form {
+			div {
 				margin: 20px;
 				padding: 20px;
 			}
@@ -26,45 +26,121 @@
 		</style>
 	</head>
 	<body>
-		<form id="form_datos">
+		<div id="form_datos">
 			<label for="name">Nombre:</label>
-			<input type="text" id="name" />
+			<input type="text" id="nameSignup" />
 			<label for="email">E-mail:</label>
-			<input type="text" id="email" />
+			<input type="text" id="emailSignup" />
 			<label for="password">Password:</label>
-			<input type="password" id="password" />
+			<input type="password" id="passwordSignup" />
 			<label for="phone">Phone:</label>
-			<input type="text" id="phone" />
+			<input type="text" id="phoneSignup" />
 			<button onclick="enviarDatos()">Añadir a DB</button>
-		</form>
-		<form id="form_nombre">
+		</div>
+		<div id="form_nombre">
 			<label for="nombre2">Nombre:</label>
 			<input type="text" id="nombre2" />
 			<button>Buscar en DB</button>
-		</form>
-		<form id="form_login">
+		</div>
+		<div id="form_login">
 			<label for="email">E-mail:</label>
 			<input type="text" id="email2" />
 			<label for="password">Password:</label>
 			<input type="password" id="password2" />
 			<button>Login</button>
-		</form>
+		</div>
+		<div id="insertarDatosLog"></div>
 		<script>
+			function checkDB() {
+				$.ajax({
+					url: "./users.php",
+					type: "POST",
+					data: {
+						api: "checkConectionDB",
+					},
+					// dataType: "json",
+					success: function (response) {
+						if (response == 0) {
+							document.getElementById("insertarDatosLog").innerHTML =
+								"error data";
+						} else {
+							document.getElementById("insertarDatosLog").innerHTML = response;
+						}
+					},
+					error: function (error) {
+						console.log("ERROR: " + error);
+					},
+				});
+			}
+
 			function enviarDatos() {
-				let phone = document.getElementById("phone").value;
+				let name = document.getElementById("nameSignup").value;
+				let email = document.getElementById("emailSignup").value;
+				let phone = document.getElementById("phoneSignup").value;
+				let password = document.getElementById("passwordSignup").value;
+
+				if (name == "" || !isNaN(name)) {
+					alert("El campo name no puede estar vacío ni ser un número");
+					return null;
+				}
+
+				if (email == "" || !isNaN(email)) {
+					alert("El campo email no puede estar vacío ni ser un número");
+					return null;
+				}
+				// check "email" is real email if(email ...){return null;}
 				if (isNaN(phone)) {
-					alert("El phone debe ser un numero");
+					alert("El campo phone debe ser un numero");
+					return null;
+				}
+
+				if (password == "" || !isNaN(password)) {
+					alert("El campo password no puede estar vacío ni ser un número");
+					return null;
+				}
+
+				$.ajax({
+					url: "./users.php",
+					type: "POST",
+					data: {
+						api: "insertData",
+						nombre: name,
+						email: email,
+						phone: parseInt(phone),
+						pw: password,
+					},
+					// dataType: "json",
+					success: function (response) {
+						if (response == 0) {
+							document.getElementById("insertarDatosLog").innerHTML =
+								"error data";
+						} else {
+							document.getElementById("insertarDatosLog").innerHTML = response;
+						}
+					},
+					error: function (error) {
+						console.log(error);
+					},
+				});
+			}
+			function signIn() {
+				let email = document.getElementById("emailSignIn").value;
+				let password = document.getElementById("passwordSignIn").value;
+				if (email == "" || !isNaN(email)) {
+					alert("El campo email no puede estar vacío ni ser un número");
+					return null;
+				}
+				if (password == "" || !isNaN(password)) {
+					alert("El campo password no puede estar vacío ni ser un número");
 					return null;
 				}
 				$.ajax({
 					url: "./users.php",
 					type: "POST",
 					data: {
-						queHacer: 1,
-						nombre: document.getElementById("name").value,
-						email: document.getElementById("email").value,
-						phone: parseInt(document.getElementById("phone").value),
-						pw: document.getElementById("password").value,
+						api: "signData",
+						email: email,
+						password: password,
 					},
 					// dataType: "json",
 					success: function (response) {
