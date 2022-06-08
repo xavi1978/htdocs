@@ -44,10 +44,10 @@
 		</div>
 		<div id="form_login">
 			<label for="email">E-mail:</label>
-			<input type="text" id="email2" />
+			<input type="text" id="emailSignIn" />
 			<label for="password">Password:</label>
-			<input type="password" id="password2" />
-			<button>Login</button>
+			<input type="password" id="passwordSignIn" />
+			<button onclick="signIn()">Login</button>
 		</div>
 		<div id="insertarDatosLog"></div>
 		<script>
@@ -138,7 +138,8 @@
 					url: "./users.php",
 					type: "POST",
 					data: {
-						api: "signData",
+						// api: "signData",
+						api: "signInUser",
 						email: email,
 						password: password,
 					},

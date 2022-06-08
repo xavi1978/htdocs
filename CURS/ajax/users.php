@@ -1,5 +1,5 @@
 <?php
-createDB();
+// createDB();
 // checkConectionDB();
 switch ($_POST['api']) {
     case "checkConectionDB_generic":
@@ -90,7 +90,7 @@ function insertData($email, $name, $phone, $password)
 {
     // INSERTAR DATOS
     $conn = new mysqli("localhost", "root", "", "pbd");
-    $sql = "INSERT INTO usuarios (email,nombre,phone,password) VALUES ('" . $email . "','" . $name . "'," . $phone . ",'" . $password . "');";
+    $sql = "INSERT INTO usuarios (email,nombre,phone,password) VALUES ('" . $email . "','" . $name . "'," . $phone . ",'" . md5($password) . "');";
     echo $sql;
     if ($conn->query($sql) === TRUE) {
         echo "insert table \"usuarios\"<br>";
