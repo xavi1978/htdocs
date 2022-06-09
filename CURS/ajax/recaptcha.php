@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Madrid');
 
-define("RECAPTCHA_V3_SECRET_KEY", '6LeXj00gAAAAAKXtM9bMggPePKi7BTmsv33l8J5H');
+define("RECAPTCHA_V3_SECRET_KEY", '6Ld-vlQgAAAAAIj5uZAXJZKY9mQPYiZKPNiUy_0Z');
 
 // if (isset($_POST['email']) && $_POST['email']) {
 //     $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
