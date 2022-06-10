@@ -15,7 +15,7 @@ grecaptcha.ready(function () {
 	// do request for recaptcha token
 	// response is promise with passed token
 	grecaptcha
-		.execute("6LeXj00gAAAAAJ51Xf57GeW34QJW3cggJgzzA7NJ", {
+		.execute("6Ld-vlQgAAAAANx6tH9cFTC2T4tTvgbjW44BulFI", {
 			action: "validate_captcha",
 		})
 		.then(function (token) {
@@ -64,30 +64,58 @@ function registrarUsuario() {
 		passwordBoolean = false;
 	}
 
+	/*
+	if (
+			nameBoolean &&
+			emailBoolean &&
+			phoneBoolean &&
+			passwordBoolean &&
+			checkRecaptcha()
+		) {
+	
+	}
+	*/
 	$.ajax({
 		url: "./registrarse.php",
 		type: "POST",
 		data: {
 			api: "checkEmail",
 			email: inputEmail_valor,
+			name: inputName_valor,
+			phone: inputPhone_valor,
+			password: inputPassword_valor,
+			captcha: document.getElementById("g-recaptcha-response").value,
 		},
-		// dataType:"json",
+		// dataType: "json",
 		success: function (response) {
 			if (response == 0) {
-				console.error(response);
+				console.warn(response);
 			} else {
 				console.log(response);
-				if (response == "null") {
-					console.error("ERROR");
+				if ("error" in response) {
+					console.warn("ERROR");
+					emailBoolean = false;
 				} else {
-					console.error("OK");
+					console.warn("OK");
+					emailBoolean = true;
 				}
+				coloresCampos(nameBoolean, emailBoolean, phoneBoolean, passwordBoolean);
 			}
 		},
 		error: function (error) {
-			console.error("ERROR:" + error);
+			console.warn("ERROR:" + error);
+			emailBoolean = false;
+			coloresCampos(nameBoolean, emailBoolean, phoneBoolean, passwordBoolean);
 		},
 	});
+}
+
+function coloresCampos(
+	nameBoolean,
+	emailBoolean,
+	phoneBoolean,
+	passwordBoolean
+) {
 	if (nameBoolean) {
 		inputName.classList.remove("inputError");
 		inputName.classList.add("inputSuccess");
@@ -115,15 +143,5 @@ function registrarUsuario() {
 	} else {
 		inputPassword.classList.remove("inputSuccess");
 		inputPassword.classList.add("inputError");
-	}
-
-	if (
-		nameBoolean &&
-		emailBoolean &&
-		phoneBoolean &&
-		passwordBoolean &&
-		checkRecaptcha()
-	) {
-		// guardar en DB
 	}
 }
