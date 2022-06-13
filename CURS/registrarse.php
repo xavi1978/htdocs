@@ -88,11 +88,12 @@ function enviarmail($email)
 {
     $usuario = new stdClass();
     $conn = new mysqli("localhost", "root", "", "pbd");
-    $sql = "SELECT * FROM usuarios_temp WHERE email='" . $email . "' LIMIT 1;";
+    $sql = "SELECT * FROM usuarios_temp WHERE email='" . $email . "' ORDER BY id DESC LIMIT 1;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
 
         while ($row = $result->fetch_assoc()) {
+            $usuario->id = $row['id'];
             $usuario->email = $row['email'];
             $usuario->nombre = $row['nombre'];
             $usuario->phone = $row['phone'];
@@ -100,7 +101,7 @@ function enviarmail($email)
             $usuario->reg_date = $row['reg_date'];
         }
         $conn->close();
-        $xstring = $usuario->email . "-" . $usuario->nombre . "-" . $usuario->phone . "-" . $usuario->password . "-" . $usuario->reg_date;
+        $xstring = $usuario->id . "-" . $usuario->email . "-" . $usuario->nombre . "-" . $usuario->phone . "-" . $usuario->password . "-" . $usuario->reg_date;
         $sha1 = sha1($xstring);
         echo $sha1;
         sendMail($usuario, $sha1);
@@ -120,7 +121,7 @@ function sendMail($usuario, $sha1)
 {
     //MAIL
     $HostSMTP = 'smtp.gmail.com'; // Set the SMTP server to send through
-    $ContrasenaDelCorreo = ''; // SMTP password
+    $ContrasenaDelCorreo = 'ikseeyntqolpdcgd'; // SMTP password
     $SendFromEMAIL = 'onzepels@gmail.com'; // SMTP username
     $QuienLoEnviaNAME = 'moderator';
     $SendFromEMAILreply = 'onzepels@gmail.com';
@@ -130,7 +131,7 @@ function sendMail($usuario, $sha1)
     //
     $SentToEmail = $usuario->email;
     $Asunto = "ninguno";
-    $BodyHTML = "<h1>hola x</h1> <br><a href=\"http://localhost/?clave=" . $sha1 . "\"<b>" . $sha1 . "</b></a>";
+    $BodyHTML = "<h1>hola x</h1> <br><a href=\"http://localhost/CURS/new_user.php?id=" . $usuario->id . "&clave=" . $sha1 . "\"<b>" . $sha1 . "</b></a>";
     $BodyNOHTML = "hola que tal?";
 
 
