@@ -1,4 +1,6 @@
 <?php
+//mysqli("localhost", "root", "", "pbd");
+//mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
 date_default_timezone_set('Europe/Madrid');
 define("RECAPTCHA_V3_SECRET_KEY", '6Ld-vlQgAAAAAIj5uZAXJZKY9mQPYiZKPNiUy_0Z');
 $myObj = new stdClass();
@@ -31,7 +33,7 @@ function checkEmail($email, $myObj)
         $myObj->error = "el email esta vacio o es un numero";
     }
     //
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "SELECT email FROM usuarios WHERE email='" . $email  . "' ;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
@@ -70,7 +72,7 @@ function checkCaptcha($email, $nombre, $phone, $password, $captcha, $myObj)
 
 function insertUser($email, $nombre, $phone, $password, $myObj)
 {
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "INSERT INTO usuarios_temp (email,nombre,phone,password) VALUES ('" . $email . "','" . $nombre . "'," . $phone . ",'" . md5($password) . "');";
     echo $sql;
     if ($conn->query($sql) === TRUE) {
@@ -87,7 +89,7 @@ function insertUser($email, $nombre, $phone, $password, $myObj)
 function enviarmail($email)
 {
     $usuario = new stdClass();
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "SELECT * FROM usuarios_temp WHERE email='" . $email . "' ORDER BY id DESC LIMIT 1;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
@@ -131,7 +133,7 @@ function sendMail($usuario, $sha1)
     //
     $SentToEmail = $usuario->email;
     $Asunto = "ninguno";
-    $BodyHTML = "<h1>hola x</h1> <br><a href=\"http://localhost/CURS/new_user.php?id=" . $usuario->id . "&clave=" . $sha1 . "\"<b>" . $sha1 . "</b></a>";
+    $BodyHTML = '<h1>hola x</h1> <br><a href="http://' . $_SERVER['HTTP_HOST'] . '/CURS/new_user.php?id=' . $usuario->id . '&clave=' . $sha1 . '"<b>' . $sha1 . '</b></a>';
     $BodyNOHTML = "hola que tal?";
 
 

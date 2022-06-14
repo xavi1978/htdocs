@@ -5,7 +5,7 @@ if (isset($_GET['id']) && isset($_GET['clave'])) {
     echo "id:" . $_GET['id'] . "<br>";
     echo "clave:" . $_GET['clave'] . "<br>";
 
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "SELECT * FROM usuarios_temp WHERE id='" . $id  . "' ;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
@@ -31,15 +31,16 @@ $conn->close();
 
 function insertUser($user)
 {
-    $conn = new mysqli("localhost", "root", "", "pbd");
-    $sql = "INSERT INTO usuarios (email,nombre,phone,password) VALUES ('" . $user->email . "','" .  $user->$nombre . "'," . $user->$phone . ",'" . $user->$password . "');";
-    echo $sql;
+    $conn = new mysqli("sql4.freemysqlhosting.net", "sql4499513", "YJim2lFDE", "sql4499513");
+    $sql = "INSERT INTO usuarios (email,nombre,phone,password,reg_date) VALUES ('" . $user->email . "','" . $user->nombre . "'," . $user->phone . ",'" . $user->password . "','" . date("Y-m-d H:i:s") . "');";
     if ($conn->query($sql) === TRUE) {
         echo "<br>OK";
+        $sql_a = "DELETE FROM usuarios_temp WHERE email='" . $user->email . "' || reg_date <= NOW() - INTERVAL 1 DAY;";
+        $conn->query($sql_a);
         header('Location: login.html');
     } else {
         echo "<br>ERROR";
-        // echo "Error: insert table \"usuarios\" " . $conn->error;
+        //echo "Error: insert table \"usuarios\" " . $conn->error . " <br>" . $sql . "<br>";
     }
     $conn->close();
 }

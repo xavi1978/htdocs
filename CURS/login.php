@@ -29,7 +29,7 @@ function checkEmail($email, $myObj)
         $myObj->error = "el email esta vacio o es un numero";
     }
     //
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "SELECT email FROM usuarios WHERE email='" . $email  . "' ;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
@@ -69,7 +69,7 @@ function checkCaptcha($captcha, $myObj)
 function loginUser($email, $password, $myObj)
 {
     $usuario = new stdClass();
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "SELECT nombre FROM usuarios WHERE email='" . $email . "' && '" . md5($password) . "';";
     // echo $sql;
     $result = $conn->query($sql);
@@ -84,7 +84,7 @@ function loginUser($email, $password, $myObj)
             $result = $conn->query($sql_a);
 
             $myObj->success = json_encode($usuario);
-            $myObj->error = null;
+            // $myObj->error = null;
             break;
         }
     } else {
