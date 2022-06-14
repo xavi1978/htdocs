@@ -1,6 +1,10 @@
-### PROJECTE FI DE CURS
+### Nom del projecte:
 
-#### IDEES DESCARTADES
+### Explicació previa
+
+Vull crear una web
+
+### Pluja d'idees:
 
 #### 1- Botiga
 
@@ -16,7 +20,7 @@ Descartada per desinterès.
 
 #### 3- Cartellera
 
-Cartellera amb informació sobre pel·lícules
+Cartellera amb informació i tràilers sobre pel·lícules
 en cartell i cinemes i horaris on es projecten.
 
 Descartada per la seva simplicitat.
@@ -69,3 +73,35 @@ Client de correu amb enviament de missatges
 entre usuaris amb editor integrat i llibreta virtual de contactes.
 
 Descartada per la seva complexitat.
+
+#### 12- Idea 12
+
+M'agrada aquesta idea i l'escullo per ...
+
+### Descripció del projecte
+
+### Descripció de les característiques
+
+### Viabilitat
+
+### Usuaris potencials
+
+### Mercat a cobrir
+
+### etc. ...
+
+### Documentació técnica
+
+#### Base
+
+#### Eines
+
+S'utilitzarà Git per a portar el control de versions, la web freemysqlhosting.net per a tenir una base de dades a Internet 24/7, Heroku com a servidor PHP, Composer per a mantenir les llibreries actualitzades.
+
+#### Diagrama de Grantt
+
+#### Wireframes
+
+#### Paths
+
+#### Mockups
