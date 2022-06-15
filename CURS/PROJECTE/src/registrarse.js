@@ -1,7 +1,7 @@
 "use strict";
 const boton = document.getElementById("buttonRegistro");
 
-boton.addEventListener("click", registrarUsuario);
+boton.addEventListener("click", temp1);
 
 const inputName = document.getElementById("nameSignup");
 const inputEmail = document.getElementById("emailSignup");
@@ -35,6 +35,20 @@ function checkRecaptcha() {
 		return true;
 	}
 	return false;
+}
+let boleanotemporal = true;
+
+function temp1() {
+	if (boleanotemporal) {
+		console.log("dar boton");
+		boleanotemporal = false;
+		let i = document.createElement("i");
+		i.classList.add("fa");
+		i.classList.add("fa-spinner");
+		i.classList.add("fa-spin");
+		boton.appendChild(i);
+		setTimeout(registrarUsuario, 6000);
+	}
 }
 
 function registrarUsuario() {
