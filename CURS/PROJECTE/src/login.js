@@ -35,6 +35,10 @@ function checkRecaptcha() {
 	return false;
 }
 
+function encrypt(text) {
+	return CryptoJs.AES.encrypt(text, "Secret Passphrase");
+}
+
 function registrarUsuario() {
 	let inputEmail_valor = inputEmail.value;
 	let inputPassword_valor = inputPassword.value;
@@ -66,9 +70,9 @@ function registrarUsuario() {
 		type: "POST",
 		data: {
 			api: "checkEmail",
-			email: inputEmail_valor,
-			password: inputPassword_valor,
-			captcha: document.getElementById("g-recaptcha-response").value,
+			email: encrypt(inputEmail_valor),
+			password: encrypt(inputPassword_valor),
+			captcha: encrypt(document.getElementById("g-recaptcha-response").value),
 		},
 		dataType: "json",
 		success: function (response) {
