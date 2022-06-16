@@ -159,7 +159,7 @@ L'usuari podrà registrar-se com a editor a una base de dades externa, amb un fo
 _Iniciar sessió_
 
 Serà possible l'inici de sessió com a editor registrat contra una base de dades externa, introduint e-mail i contrasenya en un formulari. L'inici de sessió
-estarà verificat per 'captcha'. L'inici de sessió autoritzat activarà el mode edició de la interficie web.
+estarà verificat per 'captcha'.
 
 _Introduir llista_
 
