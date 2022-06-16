@@ -112,9 +112,9 @@ reduït com a agents editors amb finalitat divulgativa.
 
 #### Base
 
-El projecte consistirà en sis pàgines HTML, un full d'estil CSS, 3 fitxers de codi JavaScript i 3 fitxers de codi PHP.
+El projecte consistirà en cinc pàgines HTML, un full d'estil CSS, 3 fitxers de codi JavaScript i 3 fitxers de codi PHP.
 
-- `index.html` Pàgina principal. Mostra botó de registre i d'inici de sessió.
+- `index.html` Pàgina principal. Mostra camp i selector de cerca de llista, botó de registre i d'inici de sessió.
 - `login.html` Pàgina d'inici de sessió d'usuari editor. Mostra formulari.
 - `login.js`
 - `login.php`
@@ -122,9 +122,8 @@ El projecte consistirà en sis pàgines HTML, un full d'estil CSS, 3 fitxers de 
 - `registrarse.html` Pàgina de registre d'usuari editor. Mostra formulari.
 - `registrarse.js`
 - `registrarse.php`
-- `introlist.html` Pàgina d'introducció de llista. Mostra formulari.
 - `editlist.html` Pàgina d'edició de llista. Mostra formulari.
-- `searchlist.html` Pàgina de cerca de llista. Mostra formulari.
+- `searchlist.html` Pàgina de resultat de cerca de llista.
 
 #### Eines
 
@@ -177,4 +176,4 @@ L'usuari podrà consultar una llista fent clic sobre el títol d'aquesta present
 
 _Editar llista_
 
-L'usuari registrat i acreditat podrà editar una llista mitjançant un formulari amb un selector per a la categoria temàtica, un camp de text per al títol i 10 camps de text per a cadascun dels elements que componen la llista.
+L'usuari registrat i acreditat podrà editar una llista mitjançant un formulari pre-poblat amb un selector per a la categoria temàtica, un camp de text per al títol i 10 camps de text per a cadascun dels elements que componen la llista.
