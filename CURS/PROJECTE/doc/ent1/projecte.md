@@ -86,8 +86,7 @@ Escullo aquesta idea per la seva originalitat.
 ### Descripció del projecte
 
 Lloc web amb voluntat divulgativa basat en llistes classificatòries tipus 'top-ten'
-ordenades per categoria temàtica i editables pels usuaris de forma col·laborativa
-pels usuaris.
+ordenades per categoria temàtica i editables de forma col·laborativa pels usuaris.
 
 ### Descripció de les característiques
 
@@ -101,7 +100,7 @@ El projecte és factible tècnicament i la seva viabilitat és assolible.
 ### Usuaris potencials
 
 Els usuaris potencials del lloc web són qualsevol persona amb inquietud informativa a l'hora
-de consultar-lo i/o voluntat divulgativa a l'hora d'editar-lo.
+de consultar-lo i/o voluntat divulgativa en editar-lo.
 
 ### Mercat a cobrir
 
@@ -127,7 +126,7 @@ El projecte consistirà en cinc pàgines HTML, un full d'estil CSS, 3 fitxers de
 
 #### Eines
 
-S'utilitzarà Git per a portar el control de versions, la web freemysqlhosting.net per a tenir una base de dades a Internet 24/7, Heroku com a servidor PHP, Composer per a mantenir les llibreries actualitzades, Recaptcha de Google per a verificar el registre i l'inici de sessió.
+S'utilitzarà Git per a portar el control de versions, la web freemysqlhosting.net per a tenir una base de dades externalitzada, Heroku com a servidor PHP, Composer per a mantenir les llibreries actualitzades, Recaptcha de Google per a verificar el registre i l'inici de sessió.
 
 #### Diagrama de Gantt
 
