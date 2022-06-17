@@ -95,7 +95,8 @@ editables via formulari i categoritzades temàticament.
 
 ### Viabilitat
 
-El projecte és factible tècnicament i la seva viabilitat és assolible.
+El projecte és factible tècnicament i la seva viabilitat és assolible considerant una base d'usuaris editors suficient per
+augmentar el contingut del lloc web.
 
 ### Usuaris potencials
 
