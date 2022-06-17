@@ -115,24 +115,29 @@ El projecte consistirà en cinc pàgines HTML, un full d'estil CSS, 3 fitxers de
 
 - `index.html` Pàgina principal. Mostra camp i selector de cerca de llista, botó de registre i d'inici de sessió.
 - `login.html` Pàgina d'inici de sessió d'usuari editor. Mostra formulari.
-- `login.js`
-- `login.php`
-- `new_user.php`
 - `registrarse.html` Pàgina de registre d'usuari editor. Mostra formulari.
-- `registrarse.js`
-- `registrarse.php`
 - `editlist.html` Pàgina d'edició de llista. Mostra formulari.
 - `searchlist.html` Pàgina de resultat de cerca de llista.
 
 #### Eines
 
-S'utilitzarà Git per a portar el control de versions, la web freemysqlhosting.net per a tenir una base de dades externalitzada, Heroku com a servidor PHP, Composer per a mantenir les llibreries actualitzades, Recaptcha de Google per a verificar el registre i l'inici de sessió.
+S'utilitzarà GitHub per a portar el control de versions, la web freemysqlhosting.net per a tenir una base de dades externalitzada, Heroku com a servidor PHP, Composer per a mantenir les llibreries actualitzades, Recaptcha de Google per a verificar el registre i l'inici de sessió.
 
 #### Diagrama de Gantt
 
+Enllaçat en un fitxer apart: gantt.xlsx
+
 #### Wireframes
 
+![Wireframe de index.html](./wf_index.png)
+![Wireframe de registrarse.html](./wf_registrarse.png)
+![Wireframe de login.html](./wf_login.png)
+![Wireframe de searchlist.html](./wf_searchlist.png)
+![Wireframe de editlist.html](./wf_editlist.png)
+
 #### Paths
+
+![Paths](./paths.png)
 
 #### Mockups
 

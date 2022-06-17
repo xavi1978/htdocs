@@ -1,6 +1,5 @@
 <?php
 date_default_timezone_set('Europe/Madrid');
-define("RECAPTCHA_V3_SECRET_KEY", '6Ld-vlQgAAAAAIj5uZAXJZKY9mQPYiZKPNiUy_0Z');
 $myObj = new stdClass();
 
 switch ($_POST['api']) {
@@ -29,7 +28,7 @@ function checkEmail($email, $myObj)
         $myObj->error = "el email esta vacio o es un numero";
     }
     //
-    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
+    $conn = new mysqli(DB_DIRECCION, DB_USUARIO, DB_PW, DB_BASEDATOS);
     $sql = "SELECT email FROM usuarios WHERE email='" . $email  . "' ;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
@@ -69,7 +68,7 @@ function checkCaptcha($captcha, $myObj)
 function loginUser($email, $password, $myObj)
 {
     $usuario = new stdClass();
-    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
+    $conn = new mysqli(DB_DIRECCION, DB_USUARIO, DB_PW, DB_BASEDATOS);
     $sql = "SELECT nombre FROM usuarios WHERE email='" . $email . "' && '" . md5($password) . "';";
     // echo $sql;
     $result = $conn->query($sql);

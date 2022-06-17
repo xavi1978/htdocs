@@ -5,7 +5,7 @@ if (isset($_GET['id']) && isset($_GET['clave'])) {
     echo "id:" . $_GET['id'] . "<br>";
     echo "clave:" . $_GET['clave'] . "<br>";
 
-    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
+    $conn = new mysqli(DB_DIRECCION, DB_USUARIO, DB_PW, DB_BASEDATOS);
     $sql = "SELECT * FROM usuarios_temp WHERE id='" . $id  . "' ;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
@@ -31,7 +31,7 @@ $conn->close();
 
 function insertUser($user)
 {
-    $conn = new mysqli("sql4.freemysqlhosting.net", "sql4499513", "YJim2lFDE", "sql4499513");
+    $conn = new mysqli(DB_DIRECCION, DB_USUARIO, DB_PW, DB_BASEDATOS);
     $sql = "INSERT INTO usuarios (email,nombre,phone,password,reg_date) VALUES ('" . $user->email . "','" . $user->nombre . "'," . $user->phone . ",'" . $user->password . "','" . date("Y-m-d H:i:s") . "');";
     if ($conn->query($sql) === TRUE) {
         echo "<br>OK";

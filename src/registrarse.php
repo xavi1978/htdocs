@@ -1,8 +1,8 @@
 <?php
 //mysqli("localhost", "root", "", "pbd");
 //mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
+require_once $_SERVER['DOCUMENT_ROOT'] . "/conf/admin.php";
 date_default_timezone_set('Europe/Madrid');
-define("RECAPTCHA_V3_SECRET_KEY", '6Ld-vlQgAAAAAIj5uZAXJZKY9mQPYiZKPNiUy_0Z');
 $myObj = new stdClass();
 
 switch ($_POST['api']) {
@@ -33,7 +33,7 @@ function checkEmail($email, $myObj)
         $myObj->error = "el email esta vacio o es un numero";
     }
     //
-    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
+    $conn = new mysqli(DB_DIRECCION, DB_USUARIO, DB_PW, DB_BASEDATOS);
     $sql = "SELECT email FROM usuarios WHERE email='" . $email  . "' ;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
@@ -72,7 +72,7 @@ function checkCaptcha($email, $nombre, $phone, $password, $captcha, $myObj)
 
 function insertUser($email, $nombre, $phone, $password, $myObj)
 {
-    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
+    $conn = new mysqli(DB_DIRECCION, DB_USUARIO, DB_PW, DB_BASEDATOS);
     $sql = "INSERT INTO usuarios_temp (email,nombre,phone,password) VALUES ('" . $email . "','" . $nombre . "'," . $phone . ",'" . md5($password) . "');";
     echo $sql;
     if ($conn->query($sql) === TRUE) {
@@ -89,7 +89,7 @@ function insertUser($email, $nombre, $phone, $password, $myObj)
 function enviarmail($email)
 {
     $usuario = new stdClass();
-    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
+    $conn = new mysqli(DB_DIRECCION, DB_USUARIO, DB_PW, DB_BASEDATOS);
     $sql = "SELECT * FROM usuarios_temp WHERE email='" . $email . "' ORDER BY id DESC LIMIT 1;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
@@ -123,8 +123,8 @@ function sendMail($usuario, $sha1)
 {
     //MAIL
     $HostSMTP = 'smtp.gmail.com'; // Set the SMTP server to send through
-    $ContrasenaDelCorreo = 'ikseeyntqolpdcgd'; // SMTP password
-    $SendFromEMAIL = 'onzepels@gmail.com'; // SMTP username
+    $ContrasenaDelCorreo = EMAIL_PW; // SMTP password
+    $SendFromEMAIL = EMAIL_SMTP; // SMTP username
     $QuienLoEnviaNAME = 'moderator';
     $SendFromEMAILreply = 'onzepels@gmail.com';
     $QuienResponderNAME = 'moderator';
