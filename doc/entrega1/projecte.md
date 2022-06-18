@@ -142,13 +142,19 @@ Enllaçat en un fitxer apart: gantt.xlsx
 
 #### Mockups
 
+![Mockup de index.html](./mockup_index.png)
+![Mockup de registrarse.html](./mockup_registrarse.png)
+![Mockup de login.html](./mockup_login.png)
+![Mockup de searchlist.html](./mockup_searchlist.png)
+![Mockup de editlist.html](./mockup_editlist.png)
+
 ### Casos d'ús
 
 - Registrar usuari.
 
 - Iniciar sessió usuari.
 
-- Introduir llista.
+- Crear llista.
 
 - Cercar llista.
 
@@ -167,7 +173,7 @@ _Iniciar sessió_
 Serà possible l'inici de sessió com a editor registrat contra una base de dades externa, introduint e-mail i contrasenya en un formulari. L'inici de sessió
 estarà verificat per 'captcha'.
 
-_Introduir llista_
+_Crear llista_
 
 L'usuari registrat i acreditat podrà afegir una llista mitjançant un formulari amb un selector per a la categoria temàtica, un camp de text per al títol i 10 camps de text per a cadascun dels elements que componen la llista.
 
