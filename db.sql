@@ -52,7 +52,8 @@ INSERT INTO `listas` (`id`, `tema`, `titulo`, `item0`, `item1`, `item2`, `item3`
 (2, 'Esport', '10 equips amb més copes d\'Europa', 'Real Madrid', 'AC Milà', 'Bayern de Munic', 'Liverpool', 'Barcelona', 'Ajax ', 'Inter de Milà', 'Manchester United', 'Benfica', 'Chelsea'),
 (3, 'Economia', '10 països més rics del món', 'Estats Units', 'Xina', 'Japó', 'Alemanya', 'Regne Unit', 'India', 'França', 'Itàlia', 'Canadà', 'Corea'),
 (4, 'Història', '10 persones més longeves de la història.', 'Jeanne Calment', 'Kane Tanaka', 'Sarah Knauss', 'Lucile Randon', 'Nabi Tajima', 'Marie Louise Meilleur', 'Violet Brown', 'Emma Morano', 'Chiyo Miyako', 'Misao Okawa'),
-(5, 'Geografia', '10 ciutats més poblades del món', 'Tokio, Japó', 'Delhi, India', 'Shanghái, China', 'Sao Paulo, Brasil', 'Ciudad de México', 'El Cairo, Egipto', 'Bombay, India', 'Pekín, China', 'Daca, Bangladesh', 'Osaka, Japón');
+(5, 'Geografia', '10 ciutats més poblades del món', 'Tokio, Japó', 'Delhi, India', 'Shanghai, Xina', 'Sao Paulo, Brasil', 'Ciutat de Mèxic', 'El Caire, Egipte
+', 'Bombai, India', 'Pekin, Xina', 'Daca, Bangladesh', 'Osaka, Japó');
 
 -- --------------------------------------------------------
 

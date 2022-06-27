@@ -32,7 +32,8 @@
 			echo "<h1>" . $oldTema . "</h1>";
 		}
 		// var_dump($tema);
-		echo '<div style="background-color:#D0D0D0">';
+		echo '<div style="background-color:#D0D0D0; border-radius:20px">';
+		echo '<br />';
 		echo "<h3>" . $tema["titulo"] . "</h3>";
 		echo '<ol><li>' . $tema["item0"] . "</li>";
 		echo '<li>' . $tema["item1"] . "</li>";
@@ -45,8 +46,9 @@
 		echo '<li>' . $tema["item8"] . "</li>";
 		echo '<li>' . $tema["item9"] . "</li></ol>";
 		echo '<button onclick="editlist.html">Editar</button>';
+		echo '<br /><br />';
 		echo '</div>';
-		echo '<br>';
+		echo '<br />';
 	}
 
 	?>
