@@ -18,14 +18,14 @@ switch ($_POST['api']) {
 }
 
 // function insertarItem() {
-//     $conn = new mysqli("sql4.freemysqlhosting.net", "sql4499513", "YJim2lFDE", "sql4499513");
+//     $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
 //     $sql = "SELECT * FROM usuarios_temp WHERE id='" . $id . "' ;";
 //     $result = $conn->query($sql);
 // }
 
 function insertarItem($tema, $titulo, $item0, $item1, $item2, $item3, $item4, $item5, $item6, $item7, $item8, $item9)
 {
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "INSERT INTO listas (tema, titulo, item0, item1, item2, item3, item4, item5, item6, item7, item8, item9) VALUES ('" .  $tema . "','" . $titulo . "','" . $item0 .  "','" .  $item1 . "','" .  $item2 . "','" .  $item3 . "','" .  $item4 . "','" .  $item5 . "','" .  $item6 . "','" .  $item7 . "','" .  $item8 . "','" . $item9 . "');";
     //echo $sql;
     if ($conn->query($sql) === TRUE) {
@@ -39,7 +39,7 @@ function insertarItem($tema, $titulo, $item0, $item1, $item2, $item3, $item4, $i
 
 function getTemas()
 {
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "SELECT DISTINCT id,tema FROM listas ;";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
@@ -52,7 +52,7 @@ function getTemas()
 }
 function getTitulos($tema)
 {
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "SELECT id,titulo FROM listas WHERE tema='" . $tema . "';";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
@@ -65,7 +65,7 @@ function getTitulos($tema)
 }
 function getAllItems()
 {
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "SELECT * FROM listas;";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
@@ -78,7 +78,7 @@ function getAllItems()
 }
 function getItems($tema)
 {
-    $conn = new mysqli("localhost", "root", "", "pbd");
+    $conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
     $sql = "SELECT * FROM listas WHERE titulo=$tema;";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {

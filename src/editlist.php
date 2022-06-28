@@ -13,7 +13,7 @@
 <?php
 function getAllItems()
 {
-	$conn = new mysqli("localhost", "root", "", "pbd");
+	$conn = new mysqli("sql11.freemysqlhosting.net", "sql11499637", "sxzsE2THwL", "sql11499637");
 	$sql = "SELECT * FROM listas WHERE id=" . $_GET['id'] . ";";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
