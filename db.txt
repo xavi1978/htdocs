@@ -49,7 +49,7 @@ CREATE TABLE `listas` (
 
 INSERT INTO `listas` (`id`, `tema`, `titulo`, `item0`, `item1`, `item2`, `item3`, `item4`, `item5`, `item6`, `item7`, `item8`, `item9`) VALUES
 (1, 'Geografia', '10 països més extensos del món', 'Rússia', 'Canadà', 'Estats Units', 'Xina', 'Brasil', 'Austràlia', 'India', 'Argentina', 'Kazajstan', 'Argèlia'),
-(2, 'Esport', '10 equips amb més copes d\'Europa', 'Real Madrid', 'AC Milà', 'Bayern de Munic', 'Liverpool', 'Barcelona', 'Ajax ', 'Inter de Milà', 'Manchester United', 'Benfica', 'Chelsea'),
+(2, 'Esport', '10 equips de futbol amb més copes d\'Europa', 'Real Madrid', 'AC Milà', 'Bayern de Munic', 'Liverpool', 'Barcelona', 'Ajax ', 'Inter de Milà', 'Manchester United', 'Benfica', 'Chelsea'),
 (3, 'Economia', '10 països més rics del món', 'Estats Units', 'Xina', 'Japó', 'Alemanya', 'Regne Unit', 'India', 'França', 'Itàlia', 'Canadà', 'Corea'),
 (4, 'Història', '10 persones més longeves de la història.', 'Jeanne Calment', 'Kane Tanaka', 'Sarah Knauss', 'Lucile Randon', 'Nabi Tajima', 'Marie Louise Meilleur', 'Violet Brown', 'Emma Morano', 'Chiyo Miyako', 'Misao Okawa'),
 (5, 'Geografia', '10 ciutats més poblades del món', 'Tokio, Japó', 'Delhi, India', 'Shanghai, Xina', 'Sao Paulo, Brasil', 'Ciutat de Mèxic', 'El Caire, Egipte

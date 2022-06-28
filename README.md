@@ -2,6 +2,11 @@
 
 **Top-ten.**
 
+### Enllaços a documentació
+
+[Entrega 1](./doc/entrega1/)
+[Entrega 2](./doc/entrega2/)
+
 ### Descripció del projecte
 
 Lloc web amb voluntat divulgativa basat en llistes classificatòries tipus 'top-ten'
@@ -27,13 +32,13 @@ Maria DB 10.4.24 a [db.sql](./db.sql)
 
 #### Base
 
-El projecte consisteix en cinc pàgines HTML, un full d'estil CSS, 3 fitxers de codi JavaScript i 4 fitxers de codi PHP.
+El projecte consisteix en cinc pàgines visibles, 3 fitxers HTML, un full d'estil CSS, 3 fitxers de codi JavaScript i 6 fitxers de codi PHP.
 
-- `index.html` Pàgina principal. Mostra camp i selector de cerca de llista, botó de registre i d'inici de sessió.
-- `login.html` Pàgina d'inici de sessió d'usuari editor. Mostra formulari.
-- `registrarse.html` Pàgina de registre d'usuari editor. Mostra formulari.
-- `editlist.html` Pàgina d'edició de llista. Mostra formulari.
-- `searchlist.html` Pàgina de resultat de cerca de llista.
+- [index.html](./src/index.html) Pàgina principal. Mostra camp i selector de cerca de llista, botó de registre i d'inici de sessió.
+- [login.html](./src/login.html) Pàgina d'inici de sessió d'usuari editor. Mostra formulari.
+- [registrarse.html](./src/registrarse.html) Pàgina de registre d'usuari editor. Mostra formulari.
+- [editlist.php](./src/editlist.php) Pàgina d'edició de llista. Mostra formulari.
+- [searchlist.php](./src/searchlist.php) Pàgina de resultat de cerca de llista.
 
 #### Eines
 

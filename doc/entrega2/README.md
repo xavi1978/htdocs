@@ -11,6 +11,14 @@ La intenció és, aplicant els coneixements adquirits durant el curs, crear una 
 Lloc web amb voluntat divulgativa basat en llistes classificatòries tipus 'top-ten'
 ordenades per categoria temàtica i editables de forma col·laborativa pels usuaris.
 
+### Diferències respecte la primera documentació
+
+S'han modificat les extensions dels fitxers `editlist` i `searchlist` de 'html' a 'php' per incloure codi en tal llenguatge a fi d'implementar la funcionalitat del lloc web.
+
+S'ha modificat l'aspecte de la pàgina principal per a simplificar el projecte.
+
+S'ha modificat el disseny de la pàgina `searchlist` per a facilitar l'edició de les llistes.
+
 ### Descripció de les característiques
 
 El lloc web conté llistes classificatòries tipus 'top-ten' com a llistes ordenades
@@ -34,19 +42,19 @@ reduït com a agents editors amb finalitat divulgativa.
 
 #### Base
 
-El projecte consisteix en cinc pàgines HTML, un full d'estil CSS, 3 fitxers de codi JavaScript i 4 fitxers de codi PHP.
+El projecte consisteix en cinc pàgines visibles, 3 fitxers HTML, un full d'estil CSS, 3 fitxers de codi JavaScript i 6 fitxers de codi PHP.
 
 - `index.html` Pàgina principal. Mostra camp i selector de cerca de llista, botó de registre i d'inici de sessió.
 - `login.html` Pàgina d'inici de sessió d'usuari editor. Mostra formulari.
 - `registrarse.html` Pàgina de registre d'usuari editor. Mostra formulari.
-- `editlist.html` Pàgina d'edició de llista. Mostra formulari.
-- `searchlist.html` Pàgina de resultat de cerca de llista.
+- `editlist.php` Pàgina d'edició de llista. Mostra formulari.
+- `searchlist.php` Pàgina de resultat de cerca de llista.
 
 #### Eines
 
 S'utilitzarà:
 
-- **HTML**, **CSS** , **JavaScript**, **Ajax** i **JQuery** per a programar el lloc web.
+- **HTML**, **CSS** , **JavaScript**, **PHP**, **Ajax** i **JQuery** per a programar el lloc web.
 
 - **GitHub** per a portar el control de versions.
 

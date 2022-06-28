@@ -45,7 +45,7 @@
 		echo '<li>' . $tema["item7"] . "</li>";
 		echo '<li>' . $tema["item8"] . "</li>";
 		echo '<li>' . $tema["item9"] . "</li></ol>";
-		echo '<button onclick="editlist.html">Editar</button>';
+		echo '<a href="./editlist.php?id=' . $tema["id"] . '"><button >Editar</button></a>';
 		echo '<br /><br />';
 		echo '</div>';
 		echo '<br />';
