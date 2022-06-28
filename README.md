@@ -7,6 +7,10 @@
 [Entrega 1](./doc/entrega1/)
 [Entrega 2](./doc/entrega2/)
 
+### Enllaç a la llicència
+
+[LICENSE](./LICENSE)
+
 ### Descripció del projecte
 
 Lloc web amb voluntat divulgativa basat en llistes classificatòries tipus 'top-ten'

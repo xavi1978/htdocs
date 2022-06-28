@@ -36,10 +36,11 @@ function checkRecaptcha() {
 }
 
 function encrypt(text) {
-	return CryptoJs.AES.encrypt(text, "Secret Passphrase");
+	return CryptoJS.AES.encrypt(text, "Secret Passphrase");
 }
 
 function registrarUsuario() {
+	console.log("lll");
 	let inputEmail_valor = inputEmail.value;
 	let inputPassword_valor = inputPassword.value;
 
